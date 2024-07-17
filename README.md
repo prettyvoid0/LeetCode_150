@@ -1,5 +1,5 @@
 # LeetCode_150
-This repository contains my solutions for several tasks from leetcode.com.  
+This repository contains my solutions for several tasks from [LeetCode](https://leetcode.com/).  
 The list of tasks is [here](https://leetcode.com/studyplan/top-interview-150/).  
 
 ## Completed tasks by topics:
