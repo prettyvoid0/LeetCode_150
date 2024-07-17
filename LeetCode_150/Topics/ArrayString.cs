@@ -11,8 +11,29 @@
         public int RemoveDuplicates(int[] nums)
         {
             int[] numsDistincts = nums.Distinct().ToArray();
-            int counter = 0;
-            foreach (int num in numsDistincts)
+            var counter = 0;
+            foreach (var num in numsDistincts)
+            {
+                nums[counter++] = num;
+            }
+
+            nums = nums[0..counter];
+
+            return nums.Length;
+        }
+
+        /// <summary>
+        /// Removes the element from the array.
+        /// Set other elements from the beginning of the array.
+        /// </summary>
+        /// <param name="nums">The array of nums.</param>
+        /// <param name="val">The element which needs to be deleted.</param>
+        /// <returns>The amount of remaining elements.</returns>
+        public int RemoveElement(int[] nums, int val)
+        {
+            int[] numsCleared = nums.Where(x => x != val).ToArray();
+            var counter = 0;
+            foreach(var num in numsCleared)
             {
                 nums[counter++] = num;
             }
