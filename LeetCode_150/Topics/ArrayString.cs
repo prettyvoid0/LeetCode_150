@@ -175,5 +175,45 @@
             }
             return result;
         }
+
+        /// <summary>
+        /// Gets the index of the first occurence of needle in the haystack.
+        /// </summary>
+        /// <param name="haystack">The string where needle is expected to be.</param>
+        /// <param name="needle">The string which expected to be found in the haystack.</param>
+        /// <returns>The index of the first occurence of needle in the haystack.</returns>
+        public int FirstOccurrenceIndex(string haystack, string needle)
+        {
+            if (needle.Length > haystack.Length)
+                return -1;
+
+            for(int i = 0; i < haystack.Length; i++)
+            {
+                if (haystack[i] == needle[0])
+                {
+                    if ((i + needle.Length - 1) > haystack.Length)
+                    {
+                        break;
+                    }
+
+                    var flag = true;
+                    for(int j = 1; j < needle.Length; j++)
+                    {
+                        if (haystack[i + j] != needle[j])
+                        {
+                            flag = false;
+                            break;
+                        }
+                    }
+
+                    if (flag)
+                    {
+                        return i;
+                    }
+                }
+            }
+
+            return -1;
+        }
     }
 }
