@@ -3,7 +3,7 @@
     public class ArrayString
     {
         /// <summary>
-        /// Returns the amount of unique elements in the array.
+        /// Gets the amount of unique elements in the array.
         /// Set ununique elements after sorted list of unique elements for the array.
         /// </summary>
         /// <param name="nums">The array of integers.</param>
@@ -69,6 +69,111 @@
 
             var maxFrequencyIndex = frequency.IndexOf(frequency.Max(x => x));
             return detectedNums[maxFrequencyIndex];
+        }
+
+        /// <summary>
+        /// Converts the roman numeral into the integer one.
+        /// </summary>
+        /// <param name="input">The roman numeral.</param>
+        /// <returns>The converted to integer numeral.</returns>
+        public int RomanToInt(string input)
+        {
+            int result = 0;
+            bool flag = false;
+            (char, int)[] romanIntegers =
+            {('I',1),
+            ('V',5),
+            ('X',10),
+            ('L',50),
+            ('C',100),
+            ('D',500),
+            ('M',1000)};
+            
+
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (flag)
+                {
+                    flag = false;
+                    continue;
+                }
+                if (input[i] == 'I' && i + 1 != input.Length)
+                {
+                    if (input[i + 1] != 'V' && input[i + 1] != 'X')
+                    {
+                        result += 1;
+                    }
+                    else
+                    {
+                        flag = true;
+                        result = input[i + 1] == 'V'
+                        ? result += 4
+                        : result += 9;
+                    }
+                }
+
+                else if (input[i] == 'X' && i + 1 != input.Length)
+                {
+                    if (input[i + 1] != 'L' && input[i + 1] != 'C')
+                    {
+                        result += 10;
+                    }
+                    else
+                    {
+                        flag = true;
+                        result = input[i + 1] == 'L'
+                        ? result += 40
+                        : result += 90;
+                    }
+                }
+
+                else if (input[i] == 'C' && i + 1 != input.Length)
+                {
+                    if (input[i + 1] != 'D' && input[i + 1] != 'M')
+                    {
+                        result += 100;
+                    }
+                    else
+                    {
+                        flag = true;
+                        result = input[i + 1] == 'D'
+                        ? result += 400
+                        : result += 900;
+                    }
+                }
+
+                else
+                {
+                    result += romanIntegers.Where(x => x.Item1 == input[i]).First().Item2;
+                }
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Gets the number of characters in the last word in the string.
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns>The length of the last word in the string.</returns>
+        public int LengthOfLastWord(string s)
+        {
+            int result = 0;
+            int indexOfLastChar = s.Length - 1;
+            while (s[indexOfLastChar] == ' ')
+            {
+                indexOfLastChar--;
+            }
+            while (s[indexOfLastChar] != ' ')
+            {
+                result++;
+                indexOfLastChar--;
+                if (indexOfLastChar < 0)
+                {
+                    break;
+                }
+            }
+            return result;
         }
     }
 }
