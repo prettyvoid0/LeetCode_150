@@ -44,5 +44,31 @@
 
             return Enumerable.SequenceEqual(a, b);
         }
+
+        public bool CanConstruct(string ransomNote, string magazine)
+        {
+            if(ransomNote.Length > magazine.Length)
+            {
+                return false;
+            }
+
+            var ransomList = ransomNote.ToList();
+            var magazineList = magazine.ToList();
+
+            while(ransomList.Count != 0)
+            {
+                var element = magazineList.FirstOrDefault(x => x == ransomList[0]);
+
+                if (!element.Equals(ransomList[0]))
+                {
+                    return false;
+                }
+
+                magazineList.Remove(element);
+                ransomList.RemoveAt(0);
+            }
+
+            return true;
+        }
     }
 }
