@@ -20,6 +20,7 @@ The list of tasks is [here](https://leetcode.com/studyplan/top-interview-150/).
 ### Binary Search:  
 🟢 [Task 35: Search Insert Position](https://leetcode.com/problems/search-insert-position/)
 ### Math: 
-🟢 [Task 9: Palindrome Number](https://leetcode.com/problems/palindrome-number/)
+🟢 [Task 9: Palindrome Number](https://leetcode.com/problems/palindrome-number/)  
+🟢 [Task 66: Plus One](https://leetcode.com/problems/plus-one/)  
 ### 1D DP: 
 🟢 [Task 70: Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
