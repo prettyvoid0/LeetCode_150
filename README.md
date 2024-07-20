@@ -16,6 +16,7 @@ The list of tasks is [here](https://leetcode.com/studyplan/top-interview-150/).
 ### HashMap:  
 🟢 [Task 1: Two Sum](https://leetcode.com/problems/two-sum/)  
 🟢 [Task 242: Valid Anagram](https://leetcode.com/problems/valid-anagram/)  
+🟢 [Task 383: Ransom Note](https://leetcode.com/problems/ransom-note/)
 ### Binary Search:  
 🟢 [Task 35: Search Insert Position](https://leetcode.com/problems/search-insert-position/)
 ### Math: 
