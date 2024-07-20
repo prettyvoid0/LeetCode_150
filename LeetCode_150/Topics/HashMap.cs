@@ -44,5 +44,38 @@
 
             return Enumerable.SequenceEqual(a, b);
         }
+
+        /// <summary>
+        /// Given two strings and checks if first string could be created using characters from the second string.
+        /// </summary>
+        /// <param name="ransomNote">The string which must be created using another string's characters.</param>
+        /// <param name="magazine">The set of characters to create the first string.</param>
+        /// <returns>Returns True if the first string could be created using characters from the second string.
+        /// Else returns False.</returns>
+        public bool CanConstruct(string ransomNote, string magazine)
+        {
+            if(ransomNote.Length > magazine.Length)
+            {
+                return false;
+            }
+
+            var ransomList = ransomNote.ToList();
+            var magazineList = magazine.ToList();
+
+            while(ransomList.Count != 0)
+            {
+                var element = magazineList.FirstOrDefault(x => x == ransomList[0]);
+
+                if (!element.Equals(ransomList[0]))
+                {
+                    return false;
+                }
+
+                magazineList.Remove(element);
+                ransomList.RemoveAt(0);
+            }
+
+            return true;
+        }
     }
 }
