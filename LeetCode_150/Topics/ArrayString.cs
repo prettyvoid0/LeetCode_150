@@ -215,5 +215,34 @@
 
             return -1;
         }
+
+        /// <summary>
+        /// Given two arrays and the indexes of their first elements. Merge those arrays into first one, sorted by ascendent.
+        /// </summary>
+        /// <param name="nums1"></param>
+        /// <param name="m"></param>
+        /// <param name="nums2"></param>
+        /// <param name="n"></param>
+        public void Merge(int[] nums1, int m, int[] nums2, int n)
+        {
+            var result = new List<int>();
+            for(int i = 0; i<m; i++)
+            {
+                result.Add(nums1[i]);
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                result.Add(nums2[i]);
+            }
+
+            result.Sort();
+
+            var counter = 0;
+            while(counter != nums1.Length)
+            {
+                nums1[counter] = result[counter++];
+            }
+        }
     }
 }
