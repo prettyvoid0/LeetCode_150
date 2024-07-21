@@ -9,6 +9,7 @@ The list of tasks is [here](https://leetcode.com/studyplan/top-interview-150/).
 🟢 [Task 27: Remove Element](https://leetcode.com/problems/remove-element/)  
 🟢 [Task 28: Find the Index of the First Occurrence in a String  ](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/)  
 🟢 [Task 58: Length of Last Word](https://leetcode.com/problems/length-of-last-word/)  
+🟢 [Task 88: Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/)  
 🟢 [Task 169: Majority Element](https://leetcode.com/problems/majority-element/)  
 ### Two Pointers:  
 🟢 [Task 125: Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)  
